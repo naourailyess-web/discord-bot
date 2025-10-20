@@ -1,7 +1,8 @@
 import discord
+import os
 from discord.ext import commands
 
-TOKEN =
+TOKEN = os.getenv("TOKEN")
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 @bot.event
@@ -17,3 +18,4 @@ async def info(ctx):
     await ctx.send("Je suis un bot Discord créé avec Python 🐍 !")
 
 bot.run(TOKEN)
+
