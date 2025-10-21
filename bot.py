@@ -4,7 +4,9 @@ import random
 import os
 
 TOKEN = os.getenv("TOKEN")
-bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+
+# ⬇️ ajoute "help_command=None" ici pour désactiver le help intégré
+bot = commands.Bot(command_prefix="!", help_command=None, intents=discord.Intents.all())
 
 # Quand le bot se connecte
 @bot.event
@@ -85,6 +87,7 @@ async def on_message(message):
         await bot.process_commands(message)
 
 bot.run(TOKEN)
+
 
 
 
