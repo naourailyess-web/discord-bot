@@ -1,8 +1,9 @@
 import discord
-import os
 from discord.ext import commands
+import os
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("TOKEN")  # récupère le token depuis Render
+
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 @bot.event
@@ -13,9 +14,6 @@ async def on_ready():
 async def bonjour(ctx):
     await ctx.send(f"Salut {ctx.author.mention} 👋 ! Je suis en ligne !")
 
-@bot.command()
-async def info(ctx):
-    await ctx.send("Je suis un bot Discord créé avec Python 🐍 !")
-
 bot.run(TOKEN)
+
 
